@@ -1,15 +1,18 @@
 import Drawer from '../../components/Drawer/'
+import Hero from '../../components/Hero/'
 import { aboutDatas } from '../../datas/about.js'
+import '../../assets/style.scss'
 
 function About() {
     return (
         <div>
+            <Hero />
             {aboutDatas.map(({ id, title, description }) =>
 					(
 						<div key={id}>
                         <Drawer
-                        title={title}
-                        description={description} />
+                        drawerTitle={title}
+                        content={description} />
 						</div>
 					)
 				)}

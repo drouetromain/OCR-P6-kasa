@@ -1,22 +1,20 @@
 import PropTypes from 'prop-types'
 
-function Drawer({ title, description }) {
+function Drawer({ content, drawerTitle }) {
     return (
-      <div>
-            <h2>{title}</h2>
-            <div>{description}</div>
+      <div className="drawer-block">
+            <h3>{drawerTitle}</h3>
+            <div>{content}</div>
       </div>
     )
   }
   
 Drawer.propTypes = {
-    title: PropTypes.string.isRequired,
-    description: PropTypes.string.isRequired,
+  content: PropTypes.string.isRequired,
 }
   
 Drawer.defaultProps = {
-    title: '',
-    description: '',
+  content: '',
 }
 
 export default Drawer

@@ -6,16 +6,13 @@ import '../../assets/style.scss'
 function Header() {
   return (
     <nav>
-      <div class="navbar">
+      <div className="navbar">
         <img src={LogoImg} alt="Logo Kasa" /> 
-          <div class="navbar__link">
+          <div className="navbar__link">
             <Link to="/">Accueil</Link>
             <Link to="/about/">A propos</Link>
           </div>
       </div>
-      <div class="hero">
-        <h1>Chez vous, partout et ailleurs</h1>
-      </div>  
     </nav>
   )
 }

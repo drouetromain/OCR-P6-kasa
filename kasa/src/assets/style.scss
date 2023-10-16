@@ -46,6 +46,7 @@ h1 {
     a {
         color: $maincolor;
         padding-left: 40px;
+        text-decoration: none;
     }
 
 }
@@ -59,6 +60,27 @@ h1 {
     background-image: url("./hero-home.webp");
     background-position: center;
     margin-top: 20px;
+}
+
+.error {
+    h1 {
+        font-size: 288px;
+        text-align: center;
+        color: $maincolor;
+    }
+    h2 {
+        color: $maincolor;
+        text-align: center;
+    }
+    #home-link {
+        width: 400px;
+        margin: auto;
+        text-align: center;
+        margin-bottom: 50px;
+        a {
+        color: $maincolor;
+        }
+    }
 }
 
 #block-home{
@@ -128,3 +150,119 @@ h1 {
         }
     }
 }  
+
+.block-logement {
+    .carousel {
+        position: relative;
+        margin-top: 30px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 415px;
+        .arrow {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            color: red;
+        }
+        .arrow:hover {
+            cursor: grab;
+        }
+        .arrow-left {
+            left: 20px;
+            height: 30%;
+            width: 50px;
+        }
+        .arrow-right {
+            right: 20px;
+            height: 30%;
+            width: 50px;
+        }
+        .slide {
+            border-radius: 25px;
+            object-fit: cover;
+            height: 100%;
+            width: 100%;
+        }
+        .slide-hidden {
+            display: none;
+        }
+        .paginations {
+            display: flex;
+            position: absolute;
+            bottom: 10px;
+            .pagination {
+                color: #fff;
+                font-size: 18px;
+            }
+            .pagination-inactive {
+                display: none;
+            }
+        }
+    }
+    .logement-infos {
+        color: $maincolor;
+        display: flex;
+        justify-content: space-between;
+        .logement-title {
+            h2 {
+                margin-bottom: 0px;
+            }
+        }
+        .logement-contact {
+            display: flex;
+            align-items: center;
+            div {
+                margin-right: 10px;
+            }
+            img {
+                width: 70px;
+                height: 70px;
+                border: none;
+                border-radius: 35px;
+            }
+        }
+
+    }
+    .facets-rating {
+        ul {
+            list-style-type: none;
+            display: flex;
+            padding-left: 0px;
+            li {
+                background-color: $maincolor;
+                color: #fff;
+                padding: 0px 20px;
+                border-radius: 10px;
+                margin-right: 10px;
+                font-size: 14px;
+            }
+        }
+    }
+    .logement-details {
+        display: flex;
+        justify-content: space-between;
+        
+    }
+}
+.drawer-block {
+    width: 45%;
+    background-color: #F6F6F6;
+    border-radius: 0 0 10px 10px;
+    margin-bottom: 30px;
+    h3 {
+        background-color: $maincolor;
+        color: #fff;
+        border-radius: 5px;
+        padding-left: 10px;
+        margin-top:0px;
+    }
+    div {
+        color: $maincolor;
+        padding: 0 10px 0 10px;
+        ul {
+            list-style-type: none;
+            padding-left: 0px;
+        }
+    }
+}
