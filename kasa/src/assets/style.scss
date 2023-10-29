@@ -109,7 +109,7 @@ h1 {
         }
         h2 {
             position: absolute;
-            max-width: 20%;
+            max-width: 15%;
             color: #fff;
             font-size: 18px;
             padding-left: 15px;
@@ -245,24 +245,91 @@ h1 {
         
     }
 }
-.drawer-block {
+.drawer-block-closed {
     width: 45%;
-    background-color: #F6F6F6;
-    border-radius: 0 0 10px 10px;
     margin-bottom: 30px;
-    h3 {
+    .drawer-title {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 50px;
         background-color: $maincolor;
+        border-radius: 10px;
+        h3 {
         color: #fff;
-        border-radius: 5px;
         padding-left: 10px;
-        margin-top:0px;
+        }
+        img {
+            padding-right: 10px;
+            padding-left: 10px;
+        }
     }
-    div {
+    .drawer-content {
         color: $maincolor;
         padding: 0 10px 0 10px;
+        background-color: #F6F6F6;
+        border-radius: 0 0 10px 10px;
+        position: relative;
+        top: -200%;
+        z-index: -2;
         ul {
             list-style-type: none;
             padding-left: 0px;
         }
+    }
+    .drawer-content-mask {
+        position: relative;
+        top: -100%;
+        height: 100%;
+        background-color: #fff;
+        z-index: -1;
+        // clip-path: polygon(0% 0%, 0% 100%, 0 100%, 0 0, -100% 0, -50% 100%, 0 100%, 0 100%, 100% 100%, 100% 0%); 
+    }
+}
+.drawer-block-open {
+    width: 45%;
+    margin-bottom: 30px;
+    .drawer-title {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 50px;
+        background-color: $maincolor;
+        border-radius: 10px;
+        h3 {
+        color: #fff;
+        padding-left: 10px;
+        }
+        img {
+            padding-right: 10px;
+            padding-left: 10px;
+            animation-delay: 250ms;
+            transition-duration: 500ms;
+            transform: rotate(-180deg);
+        }
+    }
+    .drawer-content {
+        color: $maincolor;
+        padding: 0 10px 0 10px;
+        background-color: #F6F6F6;
+        border-radius: 0 0 10px 10px;
+        position: relative;
+        transition-duration: 500ms;
+        top: -100%;
+        z-index: -2;
+        ul {
+            list-style-type: none;
+            padding-left: 0px;
+        }
+    }
+    .drawer-content-mask {
+        position: relative;
+        top: -100%;
+        height: 100%;
+        background-color: #fff;
+        z-index: -1;
+        // position: relative;
+        // top: -100%;
+        // clip-path: polygon(0% 0%, 0% 100%, 0 100%, 0 0, -100% 0, -50% 100%, 0 100%, 0 100%, 100% 100%, 100% 0%); 
     }
 }

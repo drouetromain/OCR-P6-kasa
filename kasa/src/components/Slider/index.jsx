@@ -24,7 +24,6 @@ export const Slider = ({ data }) => {
         const page = index + 1;
         const totalPages = data.length;
         return <span key={index} className={slide === index ? "pagination" : "pagination pagination-inactive"}>{ page }/{totalPages}</span>
-        // return <button key={index} onClick={null} className={ slide === index ? "pagination" : "pagination pagination-inactive" }></button>
       })}
     </span>
   </div>
