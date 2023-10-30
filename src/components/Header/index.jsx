@@ -1,5 +1,4 @@
 import { Link } from 'react-router-dom'
-import PropTypes from 'prop-types'
 import LogoImg from '../../assets/logo-kasa.webp'
 import '../../assets/style.scss'
 
