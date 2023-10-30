@@ -11,7 +11,7 @@ function Drawer({ content, drawerTitle }) {
           <img src={ArrowUp} alt="Déployer" onClick={() => { open ? setOpen(false) : setOpen(true) } } />
         </div>
         <div className="drawer-content-mask"></div>
-        <div className="drawer-content">{content}</div>
+        <div className={ open ? "drawer-content-open" : "drawer-content-closed" }>{content}</div>
         
       </div>
     )

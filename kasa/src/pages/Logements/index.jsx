@@ -1,4 +1,3 @@
-import React, { useEffect, useState } from 'react'
 import { Slider } from '../../components/Slider'
 import Drawer from '../../components/Drawer'
 import DrawerList from '../../components/DrawerList'
@@ -14,7 +13,6 @@ function Logements() {
     let { idLogement } = useParams();
     const logement = logementsList.find((logement) => logement.id === idLogement);
     const tagsArray = logement.tags;
-    const equipementsArray = logement.equipments;
     const picturesArray = logement.pictures;
     const ratingArray = logement.rating;
     return (
@@ -37,7 +35,8 @@ function Logements() {
             </div>
             <section className="logement-details">
                 <Drawer drawerTitle="Description" content={logement?.description || ""} />
-                <div className="drawer-block">
+                <DrawerList drawerTitle="Equipements" equipementsArray={ logement.equipments } />
+                {/* <div className="drawer-block">
                     <h3>Équipements</h3>
                     <div>
                         {<ul>
@@ -46,7 +45,7 @@ function Logements() {
                                 )}
                         </ul>}
                     </div>
-                </div>
+                </div> */}
             </section>
         </main>
     )

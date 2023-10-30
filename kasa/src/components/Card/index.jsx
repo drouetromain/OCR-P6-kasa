@@ -3,6 +3,7 @@ import PropTypes from 'prop-types'
 function Card({ title, cover }) {
   return (
     <div>
+        <div className='card-gradient'></div> 
         <h2>{title}</h2>
         <img src={cover} alt={title}/>
     </div>
