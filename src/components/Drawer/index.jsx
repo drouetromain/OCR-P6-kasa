@@ -1,14 +1,9 @@
 import PropTypes from 'prop-types'
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import ArrowUp from '../../assets/arrow-up.svg'
 
-function Drawer({ content, drawerTitle, equipementsArray, isOpen }) {
+function Drawer({ content, drawerTitle, equipementsArray }) {
   const [open, setOpen] = useState(false);
-
-  // useEffect(() => {
-  //   setOpen(isOpen)
-  // }, [isOpen]);
-  
   return (
     <div className={open ? "drawer-block-open" : "drawer-block-closed"}>
       <div className="drawer-title">
