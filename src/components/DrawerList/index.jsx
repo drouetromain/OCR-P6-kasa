@@ -10,7 +10,7 @@ function DrawerList({ equipementsArray  }) {
           <h3>Equipements</h3>
           <img src={ArrowUp} alt="Déployer" onClick={() => { open ? setOpen(false) : setOpen(true) } } />
         </div>
-        <div className="drawer-content-mask"></div>
+        {/* <div className="drawer-mask"></div> */}
         <div className={ open ? "drawer-content-open" : "drawer-content-closed" }>
           {<ul>
             {equipementsArray.map((equipementsArray) =>

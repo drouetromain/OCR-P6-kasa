@@ -14,7 +14,24 @@ ReactDOM.render(
       <Header />
       <Routes>
         <Route path="/" element={<Home />} />
+        {/* {/* exact
+                path="/"
+                render={() => {
+                    return (
+                      this.state.isUserAuthenticated ?
+                      <Redirect to="/home" /> :
+                      <Redirect to="/test1" /> 
+                    )
+                }} 
+        <Route exact path="/logement/:idLogement"
+          render={() => {
+            return (
+              element = {< Logements />} : element={<Error />}
+              )
+            }
+          } /> */}
         <Route path="/logement/:idLogement" element={<Logements />} />
+        {/* <Route path='/logement/:idLogement'exact={false} component={<Error />} /> */}
         <Route path="/about" element={<About />} />
         <Route path="*" element={<Error />} />
       </Routes>

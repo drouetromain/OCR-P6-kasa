@@ -7,14 +7,41 @@ import Facets from '../../components/Facets'
 import logementsList from '../../datas/logements.json'
 import { useParams } from 'react-router-dom';
 import '../../assets/style.scss'
+import { useEffect, useState } from 'react';
 
 
 function Logements() {
+
+    const [open, setOpen] = useState(true);
+
     let { idLogement } = useParams();
     const logement = logementsList.find((logement) => logement.id === idLogement);
+    if (logement === undefined) {
+        console.log("id inexistant");
+        // <Routes>
+        //     <Route path="*" element={<Error />} />
+        // </Routes>
+    };
     const tagsArray = logement.tags;
     const picturesArray = logement.pictures;
     const ratingArray = logement.rating;
+
+  useEffect(() => {
+    let root = document.documentElement;
+    // Default
+    root.style.setProperty('--max-drawer-height', "100%");
+    let box = document.querySelectorAll("[class^='drawer-block']");
+    let mxHeight = 0;
+    box.forEach(element => {
+        let height = element.clientHeight; 
+        if(mxHeight < height) mxHeight = height;
+    });
+    // Computed max height
+    root.style.setProperty('--max-drawer-height', "800px");
+    // root.style.setProperty('--max-drawer-height', mxHeight + "px");
+    // setOpen(false)
+  }, [open]);
+
     return (
         <main className="block-logement">
             <div>
@@ -34,8 +61,9 @@ function Logements() {
                     </section>
             </div>
             <section className="logement-details">
-                <Drawer drawerTitle="Description" content={logement?.description || ""} />
-                <DrawerList drawerTitle="Equipements" equipementsArray={ logement.equipments } />
+                <Drawer isOpen={open} drawerTitle="Description" content={logement?.description || ""} />
+                <Drawer isOpen={open} drawerTitle="Equipements" equipementsArray={ logement.equipments } />
+                {/* <DrawerList drawerTitle="Equipements" equipementsArray={ logement.equipments } /> */}
                 {/* <div className="drawer-block">
                     <h3>Équipements</h3>
                     <div>

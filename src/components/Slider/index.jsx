@@ -11,6 +11,14 @@ export const Slider = ({ data }) => {
   const previousSlide = () => {
     setSlide(slide === 0 ? data.length - 1 : slide - 1);
   }
+  const totalPages = data.length;
+  if (totalPages === 1) {
+    return <div className="carousel">
+    {data.map((pictures, index) => {
+      return <img src={pictures} alt="" key={index} className={ slide === index ? "slide" : "slide slide-hidden" } />
+    })}
+  </div> 
+  }
   return <div className="carousel">
     <img src={PreviousArrow} alt= "Reculer" className="arrow arrow-left" onClick={previousSlide} />
     {data.map((pictures, index) => {
@@ -23,6 +31,10 @@ export const Slider = ({ data }) => {
         data.map((_, index) => {
         const page = index + 1;
         const totalPages = data.length;
+        console.log(totalPages);
+        if (totalPages === 1) {
+            return "";  
+        }
         return <span key={index} className={slide === index ? "pagination" : "pagination pagination-inactive"}>{ page }/{totalPages}</span>
       })}
     </span>
