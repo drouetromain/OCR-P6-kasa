@@ -31,7 +31,6 @@ export const Slider = ({ data }) => {
         data.map((_, index) => {
         const page = index + 1;
         const totalPages = data.length;
-        console.log(totalPages);
         if (totalPages === 1) {
             return "";  
         }
