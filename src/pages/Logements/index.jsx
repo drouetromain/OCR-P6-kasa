@@ -2,6 +2,7 @@ import { Slider } from '../../components/Slider'
 import Drawer from '../../components/Drawer'
 import Details from '../../components/Details'
 import Rating from '../../components/Rating'
+import Agent from '../../components/Agent'
 import Facets from '../../components/Facets'
 import logementsList from '../../datas/logements.json'
 import '../../assets/style.scss'
@@ -20,7 +21,7 @@ function Logements() {
     // 
     useEffect(() => {
         let root = document.documentElement;
-        // Default
+        // Defaut
         root.style.setProperty('--max-drawer-height', "100%");
         let box = document.querySelectorAll("[class^='drawer-block']");
         let mxHeight = 0;
@@ -28,11 +29,11 @@ function Logements() {
             let height = element.clientHeight; 
             if(mxHeight < height) mxHeight = height;
         });
-        // Computed max height
+        // Calcul hauteur mx de la div
         root.style.setProperty('--max-drawer-height', "800px");
     });
 
-    // 
+    // Redirection vers 404 si id du logement n'existe pas
     useEffect(() => {
         if (logement === undefined) {
             console.log("id inexistant");
@@ -49,18 +50,21 @@ function Logements() {
             <div>
                 <Slider data={picturesArray} />
             </div>
-            <div>
-                <Details id={logement?.id || ""} title={logement?.title || ""} cover={logement?.cover || ""} location={logement?.location || ""} name={logement?.host.name || ""} picture={logement?.host.picture || ""} />
-                    <section className="facets-rating">
-                        <ul>
-                            {tagsArray?.map((tagsArray) =>
-                                <li key={tagsArray}><Facets tags={tagsArray} /></li>
-                             )}       
-                        </ul>
-                        <div> 
-                            {ratingArray && (<Rating rating={ratingArray} />)}
+            <div className='logement-infos'>
+                <section className='localization'>
+                    <Details id={logement?.id || ""} title={logement?.title || ""} location={logement?.location || ""} />
+                        <div className="facets">
+                            <ul>
+                                {tagsArray?.map((tagsArray) =>
+                                    <li key={tagsArray}><Facets tags={tagsArray} /></li>
+                                )}       
+                            </ul>
                         </div>
-                    </section>
+                </section>
+                <section className='rating'>
+                    {ratingArray && (<Rating rating={ratingArray} />)}
+                    <Agent name={logement?.host.name || ""} picture={logement?.host.picture || ""} />
+                </section>
             </div>
             <section className="logement-details">
                 <Drawer drawerTitle="Description" content={logement?.description || ""} />

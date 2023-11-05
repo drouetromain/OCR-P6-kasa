@@ -6,7 +6,6 @@ $backgroundcolor: #F6F6F6;
 html{
 	font-family: 'Montserrat', sans-serif;
     font-weight: 500;
-    size: 24px;
     line-height: 34px;
 }
 
@@ -139,33 +138,6 @@ h1 {
  
 }
 
-// #block-home {
-//   .home {
-//         display: flex;
-//         flex-wrap: wrap;
-//         justify-content: flex-start;
-//         background-color: $backgroundcolor;
-//         border-radius: 10px;
-//         margin-top: 30px;
-//         padding-top: 15px;
-//         padding-bottom: 15px;
-//         .home__card {
-//             display: flex;
-//             align-items: end;
-//             height: 340px;
-//             width: 340px;
-//             background-color: $maincolor;
-//             border-radius: 10px;
-//             margin: 15px;
-//         }
-//         h2 {
-//             color: #fff;
-//             font-size: 18px;
-//             padding-left: 15px;
-//         }
-//     }
-// }  
-
 .block-logement {
     .carousel {
         position: relative;
@@ -219,42 +191,61 @@ h1 {
         color: $maincolor;
         display: flex;
         justify-content: space-between;
-        .logement-title {
-            h2 {
-                margin-bottom: 0px;
+        .localization{
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            padding-top: 20px;
+            .logement-title {
+                h2 {
+                    margin: 0px;
+                }
+            }
+            .facets {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                ul {
+                    list-style-type: none;
+                    display: flex;
+                    padding-left: 0px;
+                    li {
+                        background-color: $maincolor;
+                        color: #fff;
+                        padding: 0px 20px;
+                        border-radius: 10px;
+                        margin-right: 10px;
+                        font-size: 14px;
+                    }
+                }
+                
             }
         }
-        .logement-contact {
+        .rating {
             display: flex;
-            align-items: center;
+            flex-direction: column-reverse;
+            justify-content: flex-end;
+            padding-top: 20px;
             div {
-                margin-right: 10px;
+                img{
+                    padding: 20px 0 0 10px;
+                }
             }
-            img {
-                width: 70px;
-                height: 70px;
-                border: none;
-                border-radius: 35px;
+            .logement-contact {
+                display: flex;
+                align-items: center;
+                div {
+                    margin-right: 10px;
+                }
+                .agent-pic {
+                    width: 70px;
+                    height: 70px;
+                    border: none;
+                    border-radius: 50%;
+                    padding: 0;
+                }
             }
-        }
 
-    }
-    .facets-rating {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        ul {
-            list-style-type: none;
-            display: flex;
-            padding-left: 0px;
-            li {
-                background-color: $maincolor;
-                color: #fff;
-                padding: 0px 20px;
-                border-radius: 10px;
-                margin-right: 10px;
-                font-size: 14px;
-            }
         }
     }
 }
@@ -305,7 +296,6 @@ h1 {
         position: relative;
         z-index: -1;
         overflow: hidden;
-        // top: -100%;
         top: -500px;
         transition: all 0.5s;
         flex-grow: 1;
@@ -337,10 +327,6 @@ h1 {
         }
     }
 }
-
-
-
-
 
 .about-block {
     display: flex;
@@ -410,16 +396,47 @@ h1 {
         }
         .logement-infos {
             flex-direction: column;
-            .logement-contact {
-                img {
-                    width: 35px;
-                    height: 35px;
+            .localization {
+                align-items: flex-start;
+                .facets {
+                    flex-direction: column;
+                    align-items: baseline;
+                    ul {
+                        display: flex;
+                        flex-wrap: wrap;
+                        justify-content: flex-start;
+                        padding: 0;
+                        margin-bottom: 0;
+                        li {
+                            margin: 0 10px 10px 0;
+                        }
                     }
+                }
             }
-        }
-        .facets-rating {
-            flex-direction: column;
-            align-items: baseline;
+            .rating {
+                flex-direction: row;
+                justify-content: space-between;
+                padding: 0 0 20px 0;
+                div{
+                    img {
+                        padding: 20px 10px 0 0;
+                    }
+                }
+                .logement-contact {
+                    display: flex;
+                    justify-content: flex-end;
+                    width: 50%;
+                    div {
+                        text-align: right;
+                        line-height: normal;
+                    }
+                    .agent-pic {
+                        width: 50px;
+                        height: 50px;
+                        }
+                }    
+            }
+            
         }
         .logement-details {
             flex-direction: column;
