@@ -24,7 +24,7 @@ export const Slider = ({ data }) => {
     {data.map((pictures, index) => {
       return <img src={pictures} alt="" key={index} className={ slide === index ? "slide" : "slide slide-hidden" } />
     })}
-    <img src={NextArrow} alt= "Reculer" className="arrow arrow-right" onClick={nextSlide}/>
+    <img src={NextArrow} alt= "Avancer" className="arrow arrow-right" onClick={nextSlide}/>
     <span className="paginations">
       {
         
